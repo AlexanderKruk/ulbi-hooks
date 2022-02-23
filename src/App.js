@@ -1,9 +1,14 @@
+import { useRef } from "react";
 import "./App.css";
+import { Hover } from "./components/Hover";
+import { useHover } from "./hooks/useHover";
 import { useInput } from "./hooks/useInput";
 
 function App() {
   const password = useInput("");
   const login = useInput("");
+  const ref = useRef();
+  const isHover = useHover(ref);
 
   return (
     <div>
@@ -16,6 +21,17 @@ function App() {
       >
         Show
       </button>
+      <Hover />
+      <div
+        ref={ref}
+        style={{
+          height: 300,
+          width: 300,
+          background: isHover ? "green" : "gold",
+        }}
+      >
+        Hover
+      </div>
     </div>
   );
 }
