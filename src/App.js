@@ -3,6 +3,7 @@ import "./App.css";
 import { Hover } from "./components/Hover";
 import { useHover } from "./hooks/useHover";
 import { useInput } from "./hooks/useInput";
+import List from "./components/List";
 
 function App() {
   const password = useInput("");
@@ -32,6 +33,7 @@ function App() {
       >
         Hover
       </div>
+      <List />
     </div>
   );
 }
